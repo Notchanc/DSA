@@ -1,0 +1,37 @@
+Practical No.3
+
+Aim = Stack And Queues
+
+A] Write Python Program to implement stack and demonstrate push, pop and peek operations.
+
+CODE:
+
+stack = ["Rutuja", "Swarup", "Madhura"]
+stack.append("Aniruddha")
+stack.append("Pranav")
+print(stack)
+print(stack.pop())
+print(stack)
+print(stack.pop())
+print(stack)
+print("peek:",stack[-1])
+
+
+Write Python Program to implement list based queues and demonstrate various operations on it.
+
+CODE:
+
+queue=[]
+print(queue)
+queue.append("Mary")
+print(queue)
+queue.append("John")
+print(queue)
+queue.append("Maria")
+print(queue)
+queue.pop(0)
+print(queue)
+queue.pop(0)
+print(queue)
+queue.pop(0)
+print(queue)
