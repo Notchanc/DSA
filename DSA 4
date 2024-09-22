@@ -9,21 +9,25 @@ A] Write Python Program to implement tree data structure and demonstrate depth- 
 CODE:
 
 graph = {
-'A': ['B', 'c'],
-'B': ['D', 'E'],
-'C': ['F'],
-'D': [],
-'E': ['F'],
-F:[]
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
 }
-visited = set() # Set to keep track of visited nodes,
+
+visited = set()  # Set to keep track of visited nodes
+
 def dfs(visited, graph, node):
-  if node not in visited:
-     print (node)
-     visited.add(node)
-     for neighbour in graph[node]:
-        dfs(visited, graph, neighbour)
+    if node not in visited:
+        print(node)
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+
 dfs(visited, graph, 'A')
+
 
 
 B) Write Python Program to implement tree data structure and demonstrate breadth- first traversal.
