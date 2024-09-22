@@ -1,0 +1,38 @@
+Practical No.8
+
+Aim = Sorting.
+
+Q.1 Sorting.
+
+A] Write a Python Program for implementing Insertion Sort.
+
+CODE:
+
+def insertion Sort(nlist):
+  for index in range(1,len(nlist)):
+    currentvalue=nlist[index]
+    position=index
+  while position>0 and nlist[position-1]>currentvalue:
+   nlist[position]=nlist[position-1]
+   position=position-1
+   nlist[position]=currentvalue
+nlist=[14,46,43,27,57,41,45,21,0]
+insertionSort(nlist)
+print(nlist)
+
+
+B) Write a Python Program for implementing Bubble Sort.
+
+CODE:
+
+def bubbleSort(array):
+  for a in range(len(array)):
+    for b in range(0,len(array)-a-1):
+      if array[b]>array[b+1]:
+         temp=array[b] 
+         array[b]=array[b+1]
+         array[b+1]=temp
+array=[5,4,2,1,3]
+print("The Original Array is:",array)
+bubbleSort(array)
+print("The Sorted Array is:", array)
