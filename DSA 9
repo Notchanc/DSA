@@ -1,0 +1,39 @@
+Practical No. 9
+
+Aim: Selection Algorithms
+
+A] Write a Python Program to implement Randomized Selection.
+
+Code:
+
+import random
+
+def partition(arr, low, high):
+  pivot = arr[high] 
+  i=low-1
+  for j in range(low, high):
+    if arr[j] < pivot: 
+       i+=1 
+       arr[i], arr[j] = arr[j], arr[i] 
+  arr[i+1], arr[high] = arr[high], arr[i+1] 
+  return i + 1
+
+def randomized_partition(arr, low, high):
+  rand_index = random.randint(low, high) 
+  arr[rand_index], arr[high]=arr[high], arr[rand_index]
+  return partition(arr, low, high)
+
+def randomized_select(arr, low, high, k):
+  if low == high:
+     return arr[low]
+  pivot_index = randomized_partition(arr, low, high)
+  if k==pivot_index:
+     return arr[k]
+  elif k < pivot_index:
+     return randomized_select(arr, low, pivot_index - 1, k)
+  else:
+     return randomized_select(arr, pivot_index + 1, high, k)
+arr = [3, 6, 8, 1, 4, 9, 2, 7, 5]
+k=3
+result = randomized_select(arr, 0, len(arr) - 1, k-1)
+print(f"The {k}-th smallest element is: {result}")
