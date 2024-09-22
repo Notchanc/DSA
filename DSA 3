@@ -17,7 +17,7 @@ print(stack)
 print("peek:",stack[-1])
 
 
-Write Python Program to implement list based queues and demonstrate various operations on it.
+B] Write Python Program to implement list based queues and demonstrate various operations on it.
 
 CODE:
 
