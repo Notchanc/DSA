@@ -6,6 +6,7 @@ A] Write Python Program to demonstrate the use of various Python Data Types and 
 
 CODE:
 
+
 x= str("Hello World")
 print(x)
 print (type (x))
@@ -17,15 +18,20 @@ print(x)
 print(type (x))
 x = complex (4+1j)
 print(x)
-print (type (x)) x = list(("apple", "mango", "cherry")) 
+print (type (x))
+x = list(("apple", "mango", "cherry")) 
 print (x)
-print (type (x)) x = tuple (("apple", "mango", "cherry"))
-print(x) print (type (x))
+print (type (x)) 
+x = tuple (("apple", "mango", "cherry"))
+print(x) 
+print (type (x))
 x = range (6)
 print(x)
-print (type (x)) x = set(("apple", "mango", "cherry"))
+print (type (x)) 
+x = set(("apple", "mango", "cherry"))
 print(x)
-print (type (x)) Dict('Name': 'Rutuja', 1: [1, 2, 3, 4])
+print (type (x)) 
+Dict={'Name': 'Rutuja', 1:[1,2,3,4]}
 print("Creating Dictionary: ")
 print (Dict)
 print (type (Dict))
