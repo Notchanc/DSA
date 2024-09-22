@@ -8,20 +8,20 @@ A) Write a Python Program for implementation in Python for the linear
 Code-
 
 def linearSearch(array, n, x):
-
-  for i in range(0, n):
-    if (array[i] == x):
-       return i
- return -1
+    for i in range(0, n):
+        if array[i] == x:
+            return i
+    return -1
 
 array = [5, 10, 15, 20, 25]
 x = 15
 n = len(array)
 result = linearSearch(array, n, x)
-if (result == -1):
-   print("Element not found")
+if result == -1:
+    print("Element not found")
 else:
-   print("Element found at index: ",result)
+    print("Element found at index:", result)
+
 
 
 B] Write a Python Program for implementation in Python 
@@ -30,30 +30,32 @@ B] Write a Python Program for implementation in Python
 
 Code-
 
-def BinarySearch(items,value).
-  lb = 0
-  ub=len(items)-1
-  while(lb<=ub):
-    mid=int((lb+ub)/2)
-    if items[mid]==value: 
-      return mid
-    elif value<items[mid]:
-       ub=mid-1
-    else: 
-         lb=mid+1
-  return-1
+def BinarySearch(items, value):
+    lb = 0
+    ub = len(items) - 1
+    while lb <= ub:
+        mid = int((lb + ub) / 2)
+        if items[mid] == value:
+            return mid
+        elif value < items[mid]:
+            ub = mid - 1
+        else:
+            lb = mid + 1
+    return -1
+
 items = list()
-num = input("Enter no of elements in the lists:")
+num = input("Enter number of elements in the list: ")
 print("Enter elements in sorted order")
-for i in range(0,int(num)):
-  n = input("Enter Elements")
-  items.append(int(n))
+for i in range(int(num)):
+    n = input("Enter element: ")
+    items.append(int(n))
+
 choice = 'y'
-while choicey== 'y':
-  s = input("Enter elements tp be searched")
-  i = BinarySearch(items,int(s))
-  if i ==-1:
-    print("value not found")
-  else:
-     print("value found at position {}".format(i))
-     choice = input("Do you want to continue? y/n")
+while choice == 'y':
+    s = input("Enter element to be searched: ")
+    i = BinarySearch(items, int(s))
+    if i == -1:
+        print("Value not found")
+    else:
+        print("Value found at position {}".format(i))
+    choice = input("Do you want to continue? y/n: ")
