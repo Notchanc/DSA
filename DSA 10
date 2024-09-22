@@ -7,64 +7,66 @@ A) Write a Python Program to create an application for storing Polynomials.
 Code:
 
 class Polynomial:
-   def__init__(self, coefficients):
-#Coefficients are stored in a dictionary where the key is the exponent and the value is the coefficient
-     self.coefficients = coefficients
-   
-   def add(self, other):
-     result = {}
-     for exp, coeff in self.coefficients.items():
-       result[exp] = coeff
-     for exp, coeff in other.coefficients.items(): 
-       result[exp] = result.get(exp, 0) + coeff
-     return Polynomial(result)
+    def __init__(self, coefficients):
+        # Coefficients are stored in a dictionary where the key is the exponent and the value is the coefficient
+        self.coefficients = coefficients
 
-   def subtract(self, other):
-     result = {}
-     for exp, coeff in self.coefficients.items():
-       result[exp] = coeff
-     for exp, coeff in other.coefficients.items():
-       result[exp] = result.get(exp, 0)-coeff
-     return Polynomial (result)
-   def multiply(self, other):
-     result = {}
-     for exp1, coeff1 in self.coefficients.items():
-       for exp2, coeff2 in other.coefficients.items():
-         exp=exp1+ exp2
-         coeff=coeff1*coeff2
-         result[exp] = result.get(exp, 0) + coeff
-     return Polynomial(result)
+    def add(self, other):
+        result = {}
+        for exp, coeff in self.coefficients.items():
+            result[exp] = coeff
+        for exp, coeff in other.coefficients.items():
+            result[exp] = result.get(exp, 0) + coeff
+        return Polynomial(result)
 
-   def evaluate(self, x):
-    result = 0
-    for exp, coeff in self.coefficients.items():
-      result += coeff*(x** exp) 
-    return result
+    def subtract(self, other):
+        result = {}
+        for exp, coeff in self.coefficients.items():
+            result[exp] = coeff
+        for exp, coeff in other.coefficients.items():
+            result[exp] = result.get(exp, 0) - coeff
+        return Polynomial(result)
 
-   def__str__(self):
-    terms = []
-    for exp, coeff in sorted(self.coefficients.items(), reverse=True):
-      if coeff != 0:
-         if exp == 0:
-            terms.append(str(coeff)) 
-         elif exp == 1: 
-            terms.append(f"{coeff}x")
-         else:
-            terms.append(f"{coeff}x^{exp}")
-    return "+".join(terms)
-poly1 = Polynomial ({3:2, 2:- 3, 0:1})
-poly2 = Polynomial({2:1, 1:2, 0:-3})
+    def multiply(self, other):
+        result = {}
+        for exp1, coeff1 in self.coefficients.items():
+            for exp2, coeff2 in other.coefficients.items():
+                exp = exp1 + exp2
+                coeff = coeff1 * coeff2
+                result[exp] = result.get(exp, 0) + coeff
+        return Polynomial(result)
+
+    def evaluate(self, x):
+        result = 0
+        for exp, coeff in self.coefficients.items():
+            result += coeff * (x ** exp)
+        return result
+
+    def __str__(self):
+        terms = []
+        for exp, coeff in sorted(self.coefficients.items(), reverse=True):
+            if coeff != 0:
+                if exp == 0:
+                    terms.append(str(coeff))
+                elif exp == 1:
+                    terms.append(f"{coeff}x")
+                else:
+                    terms.append(f"{coeff}x^{exp}")
+        return " + ".join(terms)
+
+poly1 = Polynomial({3: 2, 2: -3, 0: 1})
+poly2 = Polynomial({2: 1, 1: 2, 0: -3})
 print(f"Polynomial 1: {poly1}")
 print(f"Polynomial 2: {poly2}")
 
 add_result = poly1.add(poly2)
-print(f"Addition result:{add_result}")
+print(f"Addition result: {add_result}")
 
 subtract_result = poly1.subtract(poly2)
-print(f"Subtraction result:{subtract_result}")
+print(f"Subtraction result: {subtract_result}")
 
 multiply_result = poly1.multiply(poly2)
-print(f"Multiplication result:{multiply_result}")
+print(f"Multiplication result: {multiply_result}")
 
 x = 2
 print(f"Evaluation of Polynomial 1 at x = {x}: {poly1.evaluate(x)}")
